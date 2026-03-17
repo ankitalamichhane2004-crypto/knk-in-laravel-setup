@@ -17,10 +17,7 @@ Route::get('/aboutproduct', function () {
 
 });
 
-Route::get('/ourmission&vission', function () {
-    return view('ourmission&vission');
 
-});
 
 Route::get('/why-choose-us', function () {
     return view('why-choose-us');
