@@ -1190,14 +1190,7 @@ button {
 
    
 
-.whatapp img{
-  height: 50px;
-  width: 50px;
-  position: fixed;
-  top: 500px;
-  left: 0;
-  z-index: 100;
-}
+
 
 /* //gallery css */
 
