@@ -54,10 +54,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="./home.html">Home</a>
+          <a class="nav-link active" aria-current="page" href="{{ route('home') }}">Home</a>
         </li>
          <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="./product.html">Product</a>
+          <a class="nav-link active" aria-current="page" href="{{ route('product.index') }}">Product</a>
         </li>
         <!-- <li class="nav-item">
           <a class="nav-link" href="#">Link</a>
@@ -67,19 +67,19 @@
            About
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="./about-product.html">About Product</a></li>
+            <li><a class="dropdown-item" href="{{ route('aboutProduct') }}">About Product</a></li>
 
-            <li><a class="dropdown-item" href="./why-choose-us.html">Why Choose Us</a></li>
+            <li><a class="dropdown-item" href="{{ route('whychooseus') }}">Why Choose Us</a></li>
           </ul>
         </li>
          <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="./blog.html">Blog</a>
+          <a class="nav-link active" aria-current="page" href="{{ route('blog') }}">Blog</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="./Gallery.html">Gallery</a>
+          <a class="nav-link active" aria-current="page" href="{{ route('gallery') }}">Gallery</a>
         </li>
          <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="./contact.html">Contact Us</a>
+          <a class="nav-link active" aria-current="page" href="{{ route('contactus') }}">Contact Us</a>
         </li>
        
   </div>
