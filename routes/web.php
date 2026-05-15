@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\DemoController;
 use App\Http\Controllers\NewController;
 use Illuminate\Support\Facades\Route;
@@ -80,3 +81,17 @@ Route::get('/whychooseus',[NewController::class, 'whychooseus'])->name('whychoos
 Route::resource('product',DemoController::class);
 
 Route::get('/admin/dashboard', [NewController::class, 'dashboard'])->name('dashboard');
+
+
+
+
+Route::get('Blog/blogtable',[BlogController::class,'index'])->name('blogtable');
+Route::get('Blog/blogform',[BlogController::class,'create'])->name('blogform');
+Route::POST('Blog/blogstore',[BlogController::class,'store'])->name('blogstore');
+Route::get('Blog/blogshow/{id}',[BlogController::class, 'show'])->name('blogshow');
+Route::get('Blog/blogedit/{blog}',[BlogController::class, 'edit'])->name('blogedit');
+Route::POST('Blog/blogupdate/{blog}',[BlogController::class,'update'])->name('blogupdate');
+Route::POST('Blog/blogdelete/{blog}',[BlogController::class,'destroy'])->name('blogdelete');
+
+
+Route::get('Blog/blogedit/{blog}',[BlogController::class, 'edit'])->name('blogedit');
