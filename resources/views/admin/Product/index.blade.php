@@ -30,9 +30,9 @@
     <table>
         <tr>
            
-            <th>Blog Title</th>
-            <th>Author Name</th>
-            <th>Blog DEscription</th>
+            <th>Product Name</th>
+            <th>Price</th>
+            <th>Product Description</th>
             <th>Show</th>
             <th colspan="2">Modify</th>
             <th>Create</th>
@@ -41,13 +41,16 @@
          @foreach ( $datas as $data ) 
         
       <tr>
-        <td>{{ $data->BlogTitle }}</td>
-        <td>{{ $data->AuthorName }}</td>
-        <td>{{ $data->BlogDescription }} </td>
-        <td><a href="{{ route('blogshow', $data->id) }}"><button>Show</button></a></td>
-        <td><a href="{{ route('blogedit', $data->id) }}"><button>Edit</button></td></a></td>
-        <td><form action="{{ route('blogdelete',$data->id) }}" method="POST">@csrf<button type="submit">Delete</button></form></td>
-     <td><a href="{{ route('blogform', $data->id) }}"><button>Create</button></a></td>
+        <td>{{ $data->ProductName }}</td>
+        <td>{{ $data->Price }} </td>
+        <td>{{ $data->ProductDescription }} </td>
+        <td><a href="{{ route('product.show', $data->id) }}"><button>Show</button></a></td>
+        <td><a href="{{ route('product.edit', $data->id) }}"><button>Edit</button></td></a></td>
+        <td><form action="{{ route('product.destroy',$data->id) }}" method="POST">
+            @csrf
+            @method('DELETE')
+            <button type="submit">Delete</button></form></td>
+     <td><a href="{{ route('product.create') }}"><button>Create</button></a></td>
       </tr>
        
         @endforeach

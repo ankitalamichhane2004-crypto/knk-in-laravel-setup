@@ -41,24 +41,24 @@
 
     <div class="container">
 
-        <h2>Blog Details</h2>
+        <h2>Product Details</h2>
 
         <p>
-            <strong>Blog Title :</strong>
+            <strong>Product Name :</strong>
            
-             {{ $blog->BlogTitle}}
+             {{ $product->ProductName}}
         </p>
 
         <p>
-            <strong>Author Name :</strong>
+            <strong>Price:</strong>
            
-             {{ $blog->AuthorName }}
+             {{ $product->Price }}
         </p>
 
         <p>
             <strong>Description :</strong>
             
-             {{ $blog->BlogDescription }}
+             {{ $product->ProductDescription }}
         </p>
 
     </div>

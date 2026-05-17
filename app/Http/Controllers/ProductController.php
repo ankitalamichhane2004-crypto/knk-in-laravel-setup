@@ -26,42 +26,42 @@ class ProductController extends Controller
     public function store(Request $request)
     {
          Product::create($request->all());
-        return redirect('Blog/blogtable');
+        return redirect()->route('product.index');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Product $blog)
+    public function show(Product $product)
     {
     
         // dd($blog->BlogTitle);
-        return view('admin.Product.show',compact('blog'));
+        return view('admin.Product.show',compact('product'));
 
     }
 
   
-    public function edit(Product $blog)
+    public function edit(Product $product)
     {
         
-       return view('admin.Product.edit',compact('blog'));
+       return view('admin.Product.edit',compact('product'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Product $blog)
+    public function update(Request $request, Product $product)
     {
       
-         $blog->update($request->all());
-         return redirect()->route('blogtable');
+         $product->update($request->all());
+         return redirect()->route('product.index');
     }
 
    
-    public function destroy(Product $blog)
+    public function destroy(Product $product)
     {
        
-        $blog->delete();
-        return redirect()->route('blogtable');
+        $product->delete();
+        return redirect()->route('product.index');
     }
 }

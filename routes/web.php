@@ -3,6 +3,7 @@
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\DemoController;
 use App\Http\Controllers\NewController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/home', function () {
@@ -58,7 +59,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/home',[NewController::class, 'home'])->name('home');
 
-Route::get('/product',[NewController::class, 'product'])->name('product');
+Route::get('/demo',[NewController::class, 'product'])->name('product');
 
 Route::get('/aboutProduct',[NewController::class, 'aboutProduct'])->name('aboutProduct');
 
@@ -78,8 +79,6 @@ Route::get('/welcome',[NewController::class, 'welcome'])->name('welcome');
 Route::get('/whychooseus',[NewController::class, 'whychooseus'])->name('whychooseus');
 
 
-Route::resource('product',DemoController::class);
-
 Route::get('/admin/dashboard', [NewController::class, 'dashboard'])->name('dashboard');
 
 
@@ -94,3 +93,4 @@ Route::POST('Blog/blogupdate/{blog}',[BlogController::class,'update'])->name('bl
 Route::POST('Blog/blogdelete/{blog}',[BlogController::class,'destroy'])->name('blogdelete');
 Route::get('Blog/blogedit/{blog}',[BlogController::class, 'edit'])->name('blogedit');
 
+Route::resource('product',ProductController::class);

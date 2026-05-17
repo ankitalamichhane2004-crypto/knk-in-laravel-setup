@@ -72,18 +72,18 @@
     <div class="container">
         <h2>Blog Form</h2>
 
-         <form method="POST" action="{{ route('blogstore') }}">
+         <form method="POST" action="{{ route('product.store') }}">
  @csrf
 
-            <label>Blog Title</label>
-            <input type="text" name="BlogTitle" placeholder="Enter blog title">
+            <label>Product Name</label>
+            <input type="text" name="ProductName" placeholder="Enter Product Name">
 
-            <label>Author Name</label>
-            <input type="text" name="AuthorName" placeholder="Enter author name">
+            <label>Price</label>
+            <input type="text" name="Price" placeholder="Enter the price">
 
 
-            <label>Blog Description</label>
-            <textarea name="BlogDescription" placeholder="Write blog description"></textarea>
+            <label>Product Description</label>
+            <textarea name="ProductDescription" placeholder="Enter the product description"></textarea>
 
             <button type="submit">Submit Blog</button>
 
