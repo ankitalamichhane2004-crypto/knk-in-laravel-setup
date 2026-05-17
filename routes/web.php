@@ -93,3 +93,4 @@ Route::get('Blog/blogedit/{blog}',[BlogController::class, 'edit'])->name('bloged
 Route::POST('Blog/blogupdate/{blog}',[BlogController::class,'update'])->name('blogupdate');
 Route::POST('Blog/blogdelete/{blog}',[BlogController::class,'destroy'])->name('blogdelete');
 Route::get('Blog/blogedit/{blog}',[BlogController::class, 'edit'])->name('blogedit');
+

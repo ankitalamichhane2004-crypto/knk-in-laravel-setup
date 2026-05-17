@@ -57,11 +57,11 @@
     <form  method="POST" action="{{ route('blogupdate',$blog->id) }}">
         @csrf
 
-        <input type="text" name="BlogTitle" value="{{ $blog->ProductName}}" placeholder="Enter title">
+        <input type="text" name="BlogTitle" value="{{ $blog->BlogTitle }}" placeholder="Enter title">
 
-        <input type="text" name="AuthorName" value="{{ $blog->Price }}" placeholder="Enter author name">
+        <input type="text" name="AuthorName" value="{{ $blog->AuthorName }}" placeholder="Enter author name">
 
-        <input type="text" name="BlogDescription" value="{{ $blog->ProductDescription }}" placeholder="Enter description">
+        <input type="text" name="BlogDescription" value="{{ $blog->BlogDescription }}" placeholder="Enter description">
 
         <button type="submit">Update</button>
     </form>
