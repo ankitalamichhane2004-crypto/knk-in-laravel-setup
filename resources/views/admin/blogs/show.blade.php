@@ -45,19 +45,19 @@
 
         <p>
             <strong>Blog Title :</strong>
-            My First Blog
+           
              {{ $blog->BlogTitle}}
         </p>
 
         <p>
             <strong>Author Name :</strong>
-            Kamal
+           
              {{ $blog->AuthorName }}
         </p>
 
         <p>
             <strong>Description :</strong>
-            This is simple blog description page.
+            
              {{ $blog->BlogDescription }}
         </p>
 

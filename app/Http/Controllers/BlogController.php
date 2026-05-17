@@ -33,14 +33,12 @@ class BlogController extends Controller
     public function show(Blog $blog)
     {
     
-        // dd($data);
+        // dd($blog->BlogTitle);
         return view('admin.blogs.show',compact('blog'));
 
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
+  
     public function edit(Blog $blog)
     {
         
