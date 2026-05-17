@@ -88,10 +88,8 @@ Route::get('/admin/dashboard', [NewController::class, 'dashboard'])->name('dashb
 Route::get('Blog/blogtable',[BlogController::class,'index'])->name('blogtable');
 Route::get('Blog/blogform',[BlogController::class,'create'])->name('blogform');
 Route::POST('Blog/blogstore',[BlogController::class,'store'])->name('blogstore');
-Route::get('Blog/blogshow/{id}',[BlogController::class, 'show'])->name('blogshow');
+Route::get('Blog/blogshow/{blog}',[BlogController::class, 'show'])->name('blogshow');
 Route::get('Blog/blogedit/{blog}',[BlogController::class, 'edit'])->name('blogedit');
 Route::POST('Blog/blogupdate/{blog}',[BlogController::class,'update'])->name('blogupdate');
 Route::POST('Blog/blogdelete/{blog}',[BlogController::class,'destroy'])->name('blogdelete');
-
-
 Route::get('Blog/blogedit/{blog}',[BlogController::class, 'edit'])->name('blogedit');
