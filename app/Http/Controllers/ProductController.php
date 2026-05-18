@@ -7,9 +7,7 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    
     public function index()
     {
          $datas = Product::get();
@@ -47,9 +45,7 @@ class ProductController extends Controller
        return view('admin.Product.edit',compact('product'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
+    
     public function update(Request $request, Product $product)
     {
       
