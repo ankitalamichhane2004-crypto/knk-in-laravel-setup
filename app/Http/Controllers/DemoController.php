@@ -6,9 +6,7 @@ use Illuminate\Http\Request;
 
 class DemoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    
     public function index()
     {
         //
