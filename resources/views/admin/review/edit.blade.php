@@ -58,11 +58,11 @@
         @csrf
         @method ('PUT')
 
-        <input type="text" name="CustomerName" value="{{ $product->ProductName }}" placeholder="Enter product name">
+        <input type="text" name="CustomerName" value="{{ $review->CustomerName }}" placeholder="Enter Customer name">
 
-        <input type="text" name="Rating" value="{{ $product->price }}" placeholder="Enter the price">
+        <input type="text" name="Rating" value="{{ $review->Rating }}" placeholder="Enter theRating">
 
-        <input type="text" name="ProductDescription" value="{{ $product->ProductDescription }}" placeholder="Enter description">
+        <input type="text" name="Description" value="{{ $review->Description }}" placeholder="Enter description">
 
         <button type="submit">Update</button>
     </form>
