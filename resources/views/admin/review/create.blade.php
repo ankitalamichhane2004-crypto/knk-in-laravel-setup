@@ -76,14 +76,14 @@
  @csrf
 
             <label>CustomerName</label>
-            <input type="text" name="ProductName" placeholder="Enter Product Name">
+            <input type="text" name="CustomerName" placeholder="Enter Customer Name">
 
             <label>Rating</label>
-            <input type="text" name="Price" placeholder="Enter the price">
+            <input type="text" name="Rating" placeholder="Enter the rating">
 
 
             <label> Description</label>
-            <textarea name="ProductDescription" placeholder="Enter the product description"></textarea>
+            <textarea name="Description" placeholder="Enter the  description"></textarea>
 
             <button type="submit">Submit Blog</button>
 
