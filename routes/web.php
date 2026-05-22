@@ -4,6 +4,8 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\DemoController;
 use App\Http\Controllers\NewController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ReviewController;
+use App\Models\Review;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/home', function () {
@@ -94,3 +96,6 @@ Route::POST('Blog/blogdelete/{blog}',[BlogController::class,'destroy'])->name('b
 Route::get('Blog/blogedit/{blog}',[BlogController::class, 'edit'])->name('blogedit');
 
 Route::resource('product',ProductController::class);
+
+Route::resource('review',ReviewController::class);
+
