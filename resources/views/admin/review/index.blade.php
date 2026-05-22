@@ -43,12 +43,15 @@
         
       <tr>
         <td>{{ $data->CustomerName }}</td>
-        <td>{{ $data->Rating}}</td>
+        <td>{{ $data->Rating }} </td>
         <td>{{ $data->Description }} </td>
-        <td><a href="{{ route('blogshow', $data->id) }}"><button>Show</button></a></td>
-        <td><a href="{{ route('blogedit', $data->id) }}"><button>Edit</button></td></a></td>
-        <td><form action="{{ route('blogdelete',$data->id) }}" method="POST">@csrf<button type="submit">Delete</button></form></td>
-     <td><a href="{{ route('blogform', $data->id) }}"><button>Create</button></a></td>
+        <td><a href="{{ route('review.show', $data->id) }}"><button>Show</button></a></td>
+        <td><a href="{{ route('review.edit', $data->id) }}"><button>Edit</button></td></a></td>
+        <td><form action="{{ route('review.destroy',$data->id) }}" method="POST">
+            @csrf
+            @method('DELETE')
+            <button type="submit">Delete</button></form></td>
+     <td><a href="{{ route('review.create') }}"><button>Create</button></a></td>
       </tr>
        
         @endforeach
