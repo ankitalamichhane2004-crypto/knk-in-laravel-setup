@@ -10,5 +10,6 @@ class Blog extends Model
         'BlogTitle',
         'AuthorName',
         'BlogDescription',
+        'image'
      ];
 }

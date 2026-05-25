@@ -72,7 +72,7 @@
     <div class="container">
         <h2>Product Form</h2>
 
-         <form method="POST" action="{{ route('blogstore') }}">
+         <form method="POST" action="{{ route('blogstore') }}" enctype="multipart/form-data">
  @csrf
 
             <label>Produt Name</label>
@@ -84,6 +84,10 @@
 
             <label>Product Description</label>
             <textarea name="BlogDescription" placeholder="Write blog description"></textarea>
+
+            <label>Image</label>
+            <input type="file" name="image"  accept="image/*">
+            
 
             <button type="submit">Submit Blog</button>
 
