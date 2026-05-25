@@ -1,4 +1,3 @@
-
 @extends('layouts.admin.master')
 @section('content')
 
@@ -35,10 +34,9 @@
     <table>
         <tr>
            
-            <th>Blog Title</th>
-            <th>Author Name</th>
-            <th>Blog DEscription</th>
-            <th>image</th>
+            <th>Name</th>
+            <th>image1</th>
+            <th>image2</th>
             <th>Show</th>
             <th colspan="2">Modify</th>
             <th>Create</th>
@@ -47,11 +45,10 @@
          @foreach ( $datas as $data ) 
         
       <tr>
-        <td>{{ $data->BlogTitle }}</td>
-        <td>{{ $data->AuthorName }}</td>
-        <td>{{ $data->BlogDescription }} </td>
-        <td><img src="{{ asset('/storage/'.$data->image) }}" alt="" class="photo"> </td>
-        
+        <td>{{ $data->Name }}</td>
+        <td><img src="{{ asset('/storage/' . $data->image1) }}" alt="" class="photo"> </td>
+        <td><img src="{{ asset('/storage/' . $data->image2) }}" alt="" class="photo"> </td>
+       
         <td><a href="{{ route('blogshow', $data->id) }}"><button>Show</button></a></td>
         <td><a href="{{ route('blogedit', $data->id) }}"><button>Edit</button></td></a></td>
         <td><form action="{{ route('blogdelete',$data->id) }}" method="POST">@csrf<button type="submit">Delete</button></form></td>

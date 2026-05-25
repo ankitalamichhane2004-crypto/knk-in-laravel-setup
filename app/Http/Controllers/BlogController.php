@@ -23,9 +23,13 @@ class BlogController extends Controller
   
     public function store(Request $request)
     {
-        dd($request);
-         Blog::create($request->all());
-        return redirect('Blog/blogtable');
+
+        $validate = $request->all();
+        $path = $request->file('image')->store('images','public');
+        $validate['image'] = $path;
+        Blog::create($validate);
+       return redirect()->route('blogtable');
+        
     }
 
     /**
