@@ -23,6 +23,7 @@ class GalleryController extends Controller
     public function create()
     {
          return view('admin.gallery.create');
+          return redirect()->route('gallery.index');
     }
 
     /**
@@ -46,7 +47,7 @@ class GalleryController extends Controller
      */
     public function show(Gallery $gallery)
     {
-        //
+        return view('admin.gallery.show',compact('gallery'));
     }
 
     /**
@@ -54,7 +55,7 @@ class GalleryController extends Controller
      */
     public function edit(Gallery $gallery)
     {
-        //
+         return view('admin.gallery.edit',compact('gallery'));
     }
 
     /**
@@ -62,7 +63,8 @@ class GalleryController extends Controller
      */
     public function update(Request $request, Gallery $gallery)
     {
-       
+        $gallery->update($request->all());
+         return redirect()->route('gallery.index');
     }
 
     /**
@@ -70,6 +72,7 @@ class GalleryController extends Controller
      */
     public function destroy(Gallery $gallery)
     {
-        //
+        $gallery->delete();
+        return redirect()->route('gallery.index');
     }
 }
