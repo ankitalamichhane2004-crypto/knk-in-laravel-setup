@@ -51,10 +51,17 @@
        
         <td><a href="{{ route('gallery.show', $data->id) }}"><button>Show</button></a></td>
         <td><a href="{{ route('gallery.edit', $data->id) }}"><button>Edit</button></td></a></td>
-        <td><form action="{{ route('gallery.destroy',$data->id) }}" method="POST">@csrf<button type="submit">Delete</button></form></td>
+        <td><form action="{{ route('gallery.destroy', $data->id) }}" method="POST">
+        @csrf
+       @method('DELETE')
+       <button type="submit" class="delete-btn">Delete</button>
+    </form></td>
      <td><a href="{{ route('gallery.index', $data->id) }}"><button>Create</button></a></td>
       </tr>
        
+
+       
+
         @endforeach
    
     </table>
