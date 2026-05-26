@@ -82,7 +82,7 @@
             <input type="file" name="image1"  accept="image/*">
 
 
-            <label>image2</label>
+            <label>image2</label> 
             <input type="file" name="image2"  accept="image/*">
             
 
