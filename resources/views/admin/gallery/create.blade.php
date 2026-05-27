@@ -1,97 +1,45 @@
+# resources/views/admin/gallery/create.blade.php
+
 @extends('layouts.admin.master')
+
 @section('content')
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Form</title>
+<div class="container mt-5">
 
-    <style>
-        body{
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
+    <h2>Add Gallery</h2>
 
-        .container{
-            width: 500px;
-            background: white;
-            margin: 50px auto;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.2);
-        }
+    <form action="{{ route('gallery.store') }}"
+          method="POST"
+          enctype="multipart/form-data">
 
-        h2{
-            text-align: center;
-            margin-bottom: 20px;
-        }
+        @csrf
 
-        label{
-            font-weight: bold;
-            display: block;
-            margin-top: 10px;
-        }
+        <div class="mb-3">
 
-        input,
-        textarea{
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
+            <label>Title</label>
 
-        textarea{
-            height: 120px;
-            resize: none;
-        }
+            <input type="text"
+                   name="title"
+                   class="form-control">
 
-        button{
-            width: 100%;
-            padding: 12px;
-            margin-top: 20px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-        }
+        </div>
 
-        button:hover{
-            background-color: #0056b3;
-        }
-    </style>
-</head>
-<body>
+        <div class="mb-3">
 
-    <div class="container">
-        <h2>Product Form</h2>
+            <label>Image</label>
 
-         <form method="POST" action="{{ route('gallery.store') }}" enctype="multipart/form-data">
- @csrf
+            <input type="file"
+                   name="image1"
+                   class="form-control">
 
-            <label> Name</label>
-            <input type="text" name="Name" placeholder="Enter blog title">
+        </div>
 
-            <label>image1</label>
-            <input type="file" name="image1"  accept="image/*">
+        <button class="btn btn-primary">
+            Save
+        </button>
 
+    </form>
 
-            <label>image2</label> 
-            <input type="file" name="image2"  accept="image/*">
-            
-
-            <button type="submit">Submit Blog</button>
-
-        </form>
-    </div>
-
-</body>
-</html>
+</div>
 
 @endsection

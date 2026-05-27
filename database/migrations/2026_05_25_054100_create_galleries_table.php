@@ -9,16 +9,19 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
-    {
-        Schema::create('galleries', function (Blueprint $table) {
-            $table->id();
-             $table->string('Name')->nullable();
-             $table->string('image1')->nullable();
-             $table->string('image2')->nullable();
-            $table->timestamps();
-        });
-    }
+   public function up(): void
+{
+    Schema::create('galleries', function (Blueprint $table) {
+
+        $table->id();
+
+        $table->string('title');
+
+        $table->string('image1');
+
+        $table->timestamps();
+    });
+}
 
     /**
      * Reverse the migrations.

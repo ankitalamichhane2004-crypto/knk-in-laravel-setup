@@ -1,75 +1,56 @@
+# resources/views/admin/gallery/edit.blade.php
+
 @extends('layouts.admin.master')
+
 @section('content')
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Edit User</title>
 
-    <style>
-        body{
-            font-family: Arial, sans-serif;
-            background: #f4f4f4;
-        }
+<div class="container mt-5">
 
-        .container{
-            width: 400px;
-            margin: 50px auto;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-        }
+    <h2>Edit Gallery</h2>
 
-        h2{
-            text-align: center;
-            margin-bottom: 20px;
-        }
+    <form action="{{ route('gallery.update',$gallery->id) }}"
+          method="POST"
+          enctype="multipart/form-data">
 
-        input{
-            width: 100%;
-            padding: 10px;
-            margin-top: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        button{
-            width: 100%;
-            padding: 10px;
-            margin-top: 15px;
-            background: green;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button:hover{
-            background: darkgreen;
-        }
-    </style>
-</head>
-<body>
-
-<div class="container">
-    <h2>Edit User</h2>
-
-    <form  method="POST" action="{{ route('gallery.update',$gallery->id) }} "enctype="multipart/form-data">
         @csrf
         @method('PUT')
 
-        <input type="text" name="Name" value="{{ $gallery->Name}}" placeholder="Enter title">
+        <div class="mb-3">
 
-        
-        <input type="file" name="image1" class="" accept="image1/*">
-        
-        <input type="file" name="image2" class="" accept="image2/*">
-        
-        <button type="submit">Update</button>
+            <label>Title</label>
+
+            <input type="text"
+                   name="title"
+                   value="{{ $gallery->title }}"
+                   class="form-control">
+
+        </div>
+
+        <div class="mb-3">
+
+            <img src="{{ asset('storage/'.$gallery->image1) }}"
+                 width="150">
+
+        </div>
+
+        <div class="mb-3">
+
+            <label>New Image</label>
+
+            <input type="file"
+                   name="image1"
+                   class="form-control">
+
+        </div>
+
+        <button class="btn btn-success">
+
+            Update
+
+        </button>
+
     </form>
-</div>
 
-</body>
-</html>
+</div>
 
 @endsection

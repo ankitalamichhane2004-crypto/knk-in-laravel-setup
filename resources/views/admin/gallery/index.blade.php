@@ -1,73 +1,83 @@
+# resources/views/admin/gallery/index.blade.php
+
 @extends('layouts.admin.master')
+
 @section('content')
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Simple Table</title>
+<div class="container mt-5">
 
-    <style>
-        table{
-            width: 60%;
-            border-collapse: collapse;
-            margin: 20px auto;
-        }
+    <a href="{{ route('gallery.create') }}"
+       class="btn btn-primary mb-3">
 
-        th, td{
-            border: 1px solid black;
-            padding: 10px;
-            text-align: center;
-        }
+       Add Gallery
 
-        th{
-            background-color: lightgray;
-        }
-        .photo{
-            height: 100px;
-            width: 100px;
-        }
-    </style>
-</head>
+    </a>
 
-<body>
+    <table class="table table-bordered">
 
-    <table>
         <tr>
-           
-            <th>Name</th>
-            <th>image1</th>
-            <th>image2</th>
-            <th>Show</th>
-            <th colspan="2">Modify</th>
-            <th>Create</th>
+
+            <th>ID</th>
+            <th>Title</th>
+            <th>Image</th>
+            <th>Action</th>
+
         </tr>
 
-         @foreach ( $datas as $data ) 
-        
-      <tr>
-        <td>{{ $data->Name }}</td>
-        <td><img src="{{ asset('/storage/' . $data->image1) }}" alt="" class="photo"> </td>
-        <td><img src="{{ asset('/storage/' . $data->image2) }}" alt="" class="photo"> </td>
-       
-        <td><a href="{{ route('gallery.show', $data->id) }}"><button>Show</button></a></td>
-        <td><a href="{{ route('gallery.edit', $data->id) }}"><button>Edit</button></td></a></td>
-        <td><form action="{{ route('gallery.destroy', $data->id) }}" method="POST">
-        @csrf
-       @method('DELETE')
-       <button type="submit" class="delete-btn">Delete</button>
-    </form></td>
-     <td><a href="{{ route('gallery.create', $data->id) }}"><button>Create</button></a></td>
-      </tr>
-       
+        @foreach($datas as $data)
 
-       
+        <tr>
+
+            <td>{{ $data->id }}</td>
+
+            <td>{{ $data->title }}</td>
+
+            <td>
+
+                <img src="{{ asset('storage/'.$data->image1) }}"
+                     width="120">
+
+            </td>
+
+            <td>
+
+                <a href="{{ route('gallery.show',$data->id) }}"
+                   class="btn btn-info">
+
+                   Show
+
+                </a>
+
+                <a href="{{ route('gallery.edit',$data->id) }}"
+                   class="btn btn-warning">
+
+                   Edit
+
+                </a>
+
+                <form action="{{ route('gallery.destroy',$data->id) }}"
+                      method="POST"
+                      style="display:inline-block;">
+
+                    @csrf
+                    @method('DELETE')
+
+                    <button class="btn btn-danger">
+
+                        Delete
+
+                    </button>
+
+                </form>
+
+            </td>
+
+        </tr>
 
         @endforeach
-   
+
     </table>
 
-</body>
-</html>
-
+</div>
 
 @endsection

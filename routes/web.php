@@ -73,7 +73,7 @@ Route::get('/blog',[NewController::class, 'blog'])->name('blog');
 Route::get('/contactus',[NewController::class, 'contactus'])->name('contactus');
 
 
-Route::get('/gallerys',[NewController::class, 'gallery'])->name('gallery');
+// Route::get('/gallerys',[NewController::class, 'gallery'])->name('gallery');
 
 
 Route::get('/welcome',[NewController::class, 'welcome'])->name('welcome');
@@ -100,4 +100,12 @@ Route::resource('product',ProductController::class);
 
 Route::resource('review',ReviewController::class);
 
-Route::resource('gallery',GalleryController::class);
+# web.php
+
+
+
+Route::resource('gallery', GalleryController::class);
+
+Route::get('/frontend-gallery',
+[GalleryController::class,'frontendgallery'])
+->name('frontend.gallery');
