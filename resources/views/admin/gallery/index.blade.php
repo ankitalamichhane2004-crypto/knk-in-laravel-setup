@@ -56,7 +56,7 @@
        @method('DELETE')
        <button type="submit" class="delete-btn">Delete</button>
     </form></td>
-     <td><a href="{{ route('gallery.index', $data->id) }}"><button>Create</button></a></td>
+     <td><a href="{{ route('gallery.create', $data->id) }}"><button>Create</button></a></td>
       </tr>
        
 
