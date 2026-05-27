@@ -55,12 +55,11 @@
              {{ $product->Price }}
         </p>
 
-        <p>
-            <strong>Description :</strong>
-            
-             {{ $product->ProductDescription }}
+         <p>
+            <strong>image1</strong>
+           
+             {{ $gallery->image1 }}
         </p>
-
     </div>
 
 </body>

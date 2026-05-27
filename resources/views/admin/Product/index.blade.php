@@ -43,7 +43,7 @@
       <tr>
         <td>{{ $data->ProductName }}</td>
         <td>{{ $data->Price }} </td>
-        <td>{{ $data->ProductDescription }} </td>
+       <td><img src="{{ asset('/storage/' . $data->image) }}" alt="" class="photo"> </td>
         <td><a href="{{ route('product.show', $data->id) }}"><button>Show</button></a></td>
         <td><a href="{{ route('product.edit', $data->id) }}"><button>Edit</button></td></a></td>
         <td><form action="{{ route('product.destroy',$data->id) }}" method="POST">

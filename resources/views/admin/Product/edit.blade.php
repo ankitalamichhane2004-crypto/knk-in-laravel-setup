@@ -54,7 +54,7 @@
 <div class="container">
     <h2>Edit User</h2>
 
-    <form  method="POST" action="{{ route('product.update',$product->id) }}">
+    <form  method="POST" action="{{ route('product.update',$gallery->id) }} "enctype="multipart/form-data">
         @csrf
         @method ('PUT')
 
@@ -62,7 +62,8 @@
 
         <input type="text" name="Price" value="{{ $product->price }}" placeholder="Enter the price">
 
-        <input type="text" name="ProductDescription" value="{{ $product->ProductDescription }}" placeholder="Enter description">
+        <input type="file" name="image" class="" accept="image/*">
+        
 
         <button type="submit">Update</button>
     </form>

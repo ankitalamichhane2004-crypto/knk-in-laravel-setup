@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class NewController extends Controller
@@ -10,7 +11,8 @@ class NewController extends Controller
  return view('home');
  }
   public function Product(){
- return view('product');
+    $products = Product::get();
+ return view('product',compact('products'));
  }
 
    public function aboutProduct(){

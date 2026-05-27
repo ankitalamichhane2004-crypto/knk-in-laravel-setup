@@ -72,7 +72,7 @@
     <div class="container">
         <h2>Blog Form</h2>
 
-         <form method="POST" action="{{ route('product.store') }}">
+          <form method="POST" action="{{ route('product.store') }}" enctype="multipart/form-data">
  @csrf
 
             <label>Product Name</label>
@@ -82,9 +82,9 @@
             <input type="text" name="Price" placeholder="Enter the price">
 
 
-            <label>Product Description</label>
-            <textarea name="ProductDescription" placeholder="Enter the product description"></textarea>
-
+            
+            <label>image</label>
+            <input type="file" name="image"  accept="image/*">
             <button type="submit">Submit Blog</button>
 
         </form>

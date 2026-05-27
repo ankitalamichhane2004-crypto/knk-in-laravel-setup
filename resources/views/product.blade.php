@@ -20,17 +20,20 @@
 
 <div class="container">
   <div class="row">
-
+    @foreach ($products as $product)
+    
+   
     <div class="col-lg-3 col-md-6 col-sm-12">
       <div class="product shadow p-5">
   <a href="product1.html">
-    <img src="{{ asset('images/Boviosta Gold.png') }}" class="productimg">
-    <p>Boviosta Gold</p>
+    <img src="{{ asset('storage/' . $product->image) }}" class="productimg">
+    <p>{{ $product->ProductName }}</p>
   </a>
 </div>
     </div>
+     @endforeach
 
-     <div class="col-lg-3 col-md-6 col-sm-12">
+     <!-- <div class="col-lg-3 col-md-6 col-sm-12">
         <div class="product shadow p-5">
   <a href="product1.html">
     <img src="{{ asset('images/Boviosta cal.png') }} " class="productimg">
@@ -57,11 +60,11 @@
     <p>Websters</p>
   </a>
 </div>
-    </div>
+    </div> -->
   </div> 
 </div>
 
-<div class="container">
+<!-- <div class="container">
   <div class="row">
 
     <div class="col-lg-3 col-md-6 col-sm-12">
@@ -104,9 +107,9 @@
 </div>
     </div>
   </div> 
-</div>
+</div> -->
 
-<div class="container">
+<!-- <div class="container">
   <div class="row">
 
     <div class="col-lg-3 col-md-6 col-sm-12">
@@ -277,7 +280,7 @@
 </div>
     </div>
   </div> 
-</div>
+</div> -->
 
 
 <div class="whatapp">
