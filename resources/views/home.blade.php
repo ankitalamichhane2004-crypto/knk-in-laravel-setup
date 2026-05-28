@@ -1,22 +1,25 @@
 @extends('layouts.frontend.master')
 
 @section('content')
+<div class="video-container">
 
- 
-  <div class="video-container">
-  
-  <video class="video" autoplay loop muted playsinline>
-    <source src="{{ asset('images/ankitavideo.mp4') }}" alt="video">
-  </video>
+    <video class="video" autoplay loop muted playsinline>
 
-  <div class="overlayer"></div>
+        <source src="{{ asset('videos/'.$datas->video) }}" type="video/mp4">
 
-  <h3 class="video-text" data-aos="fade-right" data-aos-duration="3000">
-  Quality Agrovet Products for Healthy Farming
-  </h3>
+    </video>
+
+    <div class="overlayer"></div>
+
+    <h3 class="video-text" 
+        data-aos="fade-right" 
+        data-aos-duration="3000">
+
+        {{ $datas->title }}
+
+    </h3>
 
 </div>
-
 <div class="container">
 <div class="section" style="margin: 50px;">
     <h1 style="color:  #04803b;  font-family: Livvic; padding-top: 20px;"><center>From seed to success, we walk with farmers.</center></h1>

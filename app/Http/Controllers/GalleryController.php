@@ -15,7 +15,7 @@ class GalleryController extends Controller
 
         $datas = Gallery::get();
 
-        return view('gallery',
+        return view('admin.gallery.index',
         compact('datas'));
     }
 

@@ -3,6 +3,7 @@
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\DemoController;
 use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\HeroSectionController;
 use App\Http\Controllers\NewController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ReviewController;
@@ -109,3 +110,5 @@ Route::resource('gallery', GalleryController::class);
 Route::get('/frontend-gallery',
 [GalleryController::class,'frontendgallery'])
 ->name('frontend.gallery');
+
+Route::resource('hero', HeroSectionController::class);

@@ -2,13 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\HeroSection;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
 class NewController extends Controller
 {
+
+
  public function home(){
- return view('home');
+   $datas = HeroSection::first();
+ return view('home',compact('datas'));
  }
   public function Product(){
     $products = Product::get();
