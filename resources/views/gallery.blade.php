@@ -11,7 +11,7 @@
         <div class="col-lg-4 mb-4">
 
             <img src="{{ asset('storage/'.$data->image1) }}"
-                 class="img-fluid">
+                 class="galleryimg">
 
             <h5>{{ $data->title }}</h5>
 
