@@ -21,32 +21,32 @@
 
 </div>
 <div class="container">
+
 <div class="section" style="margin: 50px;">
-    <h1 style="color:  #04803b;  font-family: Livvic; padding-top: 20px;"><center>From seed to success, we walk with farmers.</center></h1>
-   <div class="row">
-    <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-      <div class="parts1">
-        <img src="{{ asset('images/goat.jpg') }}" alt="photo" class="images2">
+
+    <h1 style="color:#04803b; font-family: Livvic; padding-top:20px;">
+        <center>From seed to success, we walk with farmers.</center>
+    </h1>
+
+    <div class="row">
+
+        @foreach($galleries as $item)
+
+        <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+            <div class="parts1">
+                <img src="{{ asset('images/'.$item->image) }}"
+                     class="images2"
+                     alt="photo">
+            </div>
+        </div>
+
+        @endforeach
+
     </div>
-    </div>
-   <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-      <div class="parts1">
-        <img src="{{ asset('images/tomato.jpeg') }}" alt="photo" class="images2">
-    </div>
-    </div>
-     <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-      <div class="parts1">
-        <img src="{{ asset('images/plant image.jpg') }}" alt="photo" class="images2">
-    </div>
-    </div>
-    <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-      <div class="parts1">
-        <img src="{{ asset('images/pesticide.jpg') }}" alt="photo" class="images2">
-    </div>
-    </div>
-    </div>
-    </div>
-   </div>
+
+</div>
+
+</div>
    
    <div class="sectionss">
    <div class="container">

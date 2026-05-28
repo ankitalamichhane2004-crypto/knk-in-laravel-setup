@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\HeroSection;
+use App\Models\HomeGallery;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -12,7 +13,8 @@ class NewController extends Controller
 
  public function home(){
    $datas = HeroSection::first();
- return view('home',compact('datas'));
+    $galleries = HomeGallery::take(4)->get();
+ return view('home',compact('galleries','datas'));
  }
   public function Product(){
     $products = Product::get();
