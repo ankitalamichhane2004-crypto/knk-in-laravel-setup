@@ -82,13 +82,16 @@ Route::get('/welcome',[NewController::class, 'welcome'])->name('welcome');
 
 
 Route::get('/whychooseus',[NewController::class, 'whychooseus'])->name('whychooseus');
+Route::get('/frontend-gallery',
+[GalleryController::class,'frontendgallery'])
+->name('frontend.gallery');
+
+
+
+
 
 
 Route::get('/admin/dashboard', [NewController::class, 'dashboard'])->name('dashboard');
-
-
-
-
 Route::get('Blog/blogtable',[BlogController::class,'index'])->name('blogtable');
 Route::get('Blog/blogform',[BlogController::class,'create'])->name('blogform');
 Route::POST('Blog/blogstore',[BlogController::class,'store'])->name('blogstore');
@@ -97,21 +100,8 @@ Route::get('Blog/blogedit/{blog}',[BlogController::class, 'edit'])->name('bloged
 Route::POST('Blog/blogupdate/{blog}',[BlogController::class,'update'])->name('blogupdate');
 Route::POST('Blog/blogdelete/{blog}',[BlogController::class,'destroy'])->name('blogdelete');
 Route::get('Blog/blogedit/{blog}',[BlogController::class, 'edit'])->name('blogedit');
-
 Route::resource('product',ProductController::class);
-
 Route::resource('review',ReviewController::class);
-
-# web.php
-
-
-
 Route::resource('gallery', GalleryController::class);
-
-Route::get('/frontend-gallery',
-[GalleryController::class,'frontendgallery'])
-->name('frontend.gallery');
-
 Route::resource('hero', HeroSectionController::class);
-
 Route::resource('home-gallery', HomeGalleryController::class);
